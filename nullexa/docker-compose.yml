@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  nullexa:
+    build: .
+    container_name: nullexa
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./static/uploads:/app/static/uploads
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
